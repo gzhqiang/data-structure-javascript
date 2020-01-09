@@ -1,0 +1,10 @@
+const LinkedList = require('./LinkedList')
+
+const linkedList = new LinkedList()
+linkedList.append('zhangsan')
+linkedList.append('lisi')
+linkedList.append('zqguo')
+linkedList.insert(1, 'xwq')
+linkedList.traversal()
+console.log(linkedList.indexOf('zqguo'))
+console.log(linkedList.size())
