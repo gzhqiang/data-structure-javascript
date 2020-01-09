@@ -118,3 +118,15 @@ doubleLinkedList.insert(3, 'Java')
 console.log(doubleLinkedList.toString())
 // Python hello world Java JavaScript
 console.log(doubleLinkedList.get(3))
+
+/**
+ * 未实现的方法
+ * indexOf(element)
+ * update(position, element)
+ * removeAt(position)
+ * remove(element)
+ * isEmpty()
+ * size()
+ * forwardString()
+ * backwordString()
+ */
