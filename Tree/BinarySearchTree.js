@@ -22,6 +22,7 @@ class BST {
   }
 
   insert(value) {
+    // 时间复杂度O(lgn)
     let newNode = new Node(value)
     if (!this.root) {
       this.root = newNode
@@ -62,6 +63,7 @@ class BST {
   }
 
   remove(value) {
+    // 时间复杂度O(lgn)
     if (!this.root) {
       console.log('the tree is empty')
       return false
@@ -74,6 +76,7 @@ class BST {
   }
 
   findMinNode(root) {
+    // 时间复杂度O(lgn)
     if (!root.left) {
       return root
     } else {
@@ -100,6 +103,7 @@ class BST {
   }
 
   search(value) {
+    // 时间复杂度 O(lgn)
     if (!this.root) {
       console.log('空树, 查找失败')
       return -1
@@ -140,6 +144,25 @@ class BST {
       this.inOrder(root.right)
     }
   }
+
+  /* 
+  
+  const inorderTraversal = function(root) {
+    const result = []
+    const stack = []
+    while(stack.length || root) {
+        if(root) {
+            stack.push(root)
+            root = root.left
+        } else {
+            const node = stack.pop()
+            result.push(node.val)
+            root = node.right
+        }
+    }
+    return result
+};
+  */
 
   /**
    * 后续遍历
