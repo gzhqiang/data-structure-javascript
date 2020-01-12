@@ -50,9 +50,8 @@ class BST {
         currentNode = null
         return currentNode
       }
-      console.log('到这里了吗?')
       if (currentNode.left) {
-        currentNode = current.left
+        currentNode = currentNode.left
         return currentNode
       }
       if (currentNode.right) {
@@ -67,10 +66,55 @@ class BST {
       console.log('the tree is empty')
       return false
     } else {
-      return this.removeNode(this.root, value)
+      const root = this.removeNode(this.root, value)
+      if (!Object.is(root, this.root)) {
+        this.root = root
+      }
     }
   }
 
+  findMinNode(root) {
+    if (!root.left) {
+      return root
+    } else {
+      return this.findMinNode(root.left)
+    }
+  }
+
+  findTreeMin() {
+    return this.findMinNode(this.root).value
+  }
+
+  searchNode(root, value) {
+    if (!root) {
+      return -1
+    }
+
+    if (value < root.value) {
+      return this.searchNode(root.left, value)
+    } else if (value > root.value) {
+      return this.searchNode(root.right, value)
+    } else {
+      return root
+    }
+  }
+
+  search(value) {
+    if (!this.root) {
+      console.log('空树, 查找失败')
+      return -1
+    } else {
+      return this.searchNode(this.root, value)
+    }
+  }
+
+  /**
+   *
+   * 前序遍历
+   * @param {*} root
+   * @returns
+   * @memberof BST
+   */
   preOrder(root) {
     // console.log(root)
     if (!root) {
@@ -89,7 +133,10 @@ bst.insert(1)
 bst.insert(3)
 bst.insert(2)
 // console.log(bst.root)
-bst.preOrder(bst.root)
-bst.remove(2)
-console.log('-----------------')
-bst.preOrder(bst.root)
+// bst.preOrder(bst.root)
+// bst.remove(5)
+// console.log('-----------------')
+// bst.preOrder(bst.root)
+
+// console.log(bst.findTreeMin())
+console.table(bst.search(11))
