@@ -13,6 +13,7 @@ module.exports = class LinkedList {
   }
 
   append(element) {
+    // O(n)
     const node = new Node(element)
     if (this.head === null) {
       this.head = node
@@ -27,6 +28,7 @@ module.exports = class LinkedList {
   }
 
   removeAt(position) {
+    // O(n)
     if (position > -1 && position < this.length) {
       let previous
       let index = 0
@@ -46,6 +48,7 @@ module.exports = class LinkedList {
   }
 
   insert(position, element) {
+    // O(n)
     const node = new Node(element)
     let index = 0
     let previous = null
@@ -69,6 +72,7 @@ module.exports = class LinkedList {
   }
 
   indexOf(element) {
+    // O(n)
     let index = 0
     if (this.length === 0) {
       return -1
@@ -85,22 +89,40 @@ module.exports = class LinkedList {
   }
 
   size() {
+    // O(1)
     return this.length
   }
 
   isEmpty() {
+    // O(1)
     return this.length === 0
   }
 
   getHead() {
+    // O(1)
     return this.head
   }
 
-  traversal() {
-    this.current = this.head
+  traversal(head) {
+    // O(n)
+    this.current = head
     while (this.current) {
       console.log(this.current.element)
       this.current = this.current.next
     }
+  }
+
+  reverse() {
+    // O(n)
+    this.current = this.head
+    let newLinkedList = null
+    let previous = null
+    while (this.current) {
+      newLinkedList = this.current
+      this.current = this.current.next
+      newLinkedList.next = previous
+      previous = newLinkedList
+    }
+    return newLinkedList
   }
 }
