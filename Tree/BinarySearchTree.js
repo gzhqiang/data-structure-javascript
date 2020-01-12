@@ -111,7 +111,7 @@ class BST {
   /**
    *
    * 前序遍历
-   * @param {*} root
+   * @param {根节点} root
    * @returns
    * @memberof BST
    */
@@ -125,13 +125,48 @@ class BST {
       this.preOrder(root.right)
     }
   }
+
+  /**
+   * 中序遍历 得到的是从大到小或者从小大小的顺序, 是最有用的一种遍历方式。
+   * @param {根节点} root
+   */
+  inOrder(root) {
+    if (!root) {
+      // console.log('Tree is empty')
+      return 'Tree is empty'
+    } else {
+      this.inOrder(root.left)
+      console.log(root.value)
+      this.inOrder(root.right)
+    }
+  }
+
+  /**
+   * 后续遍历
+   * @param {根节点} root
+   */
+  postOrder(root) {
+    if (!root) {
+      return 'Tree is empty'
+    } else {
+      this.postOrder(root.left)
+      this.postOrder(root.right)
+      console.log(root.value)
+    }
+  }
 }
 
 const bst = new BST()
+bst.insert(10)
 bst.insert(5)
-bst.insert(1)
-bst.insert(3)
-bst.insert(2)
+bst.insert(12)
+bst.insert(4)
+bst.insert(6)
+bst.insert(11)
+bst.insert(14)
+// console.log(bst)
+// bst.inOrder(bst.root)
+bst.postOrder(bst.root)
 // console.log(bst.root)
 // bst.preOrder(bst.root)
 // bst.remove(5)
@@ -139,4 +174,4 @@ bst.insert(2)
 // bst.preOrder(bst.root)
 
 // console.log(bst.findTreeMin())
-console.table(bst.search(11))
+// console.table(bst.search(11))
