@@ -5,6 +5,9 @@ class Node {
   }
 }
 
+/**
+ * 待改进的点：加入哨兵节点简化边界操作。
+ */
 module.exports = class LinkedList {
   constructor() {
     this.head = null
