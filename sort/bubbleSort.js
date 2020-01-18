@@ -23,11 +23,6 @@ function bubbleSort(arr) {
   if (arr.length <= 1) return arr
   for (let i = 0; i < arr.length - 1; i++) {
     bubble(arr, arr.length - 1)
-    // for (let j = 0; j < arr.length - i; j++) {
-    //   if (arr[j] > arr[j + 1]) {
-    //     ;[arr[j + 1], arr[j]] = [arr[j], arr[j + 1]]
-    //   }
-    // }
   }
 }
 
