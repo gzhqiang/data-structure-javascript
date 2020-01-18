@@ -1,6 +1,7 @@
 /**
  *
  * 快速排序
+ * 时间复杂度O(nlg(n))
  * @param {*} arr
  * @returns
  */
