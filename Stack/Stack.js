@@ -37,3 +37,5 @@ stack.push(4)
 console.log(stack) // 这样不会调用toString方法
 console.log(stack.toString())
  */
+
+//  Leetcode: 20,155,232,844,224,682,496.
